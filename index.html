@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APNA LIBRARY 📚</title>
+<style>
+body.dark{background:#121212;color:#e0e0e0;} 
+body.dark header{background:#000;} 
+body.dark section{background:#1e1e1e;color:#fff;} 
+body.dark footer{background:#000;color:#fff;}
+
+body{margin:0;font-family:'Georgia',serif;background:linear-gradient(to right,#f5f7fa,#e3f2fd);color:#333}
+
+header{background:linear-gradient(135deg,#1e88e5,#42a5f5);color:#fff;padding:60px 20px;text-align:center;position:relative}
+header h1{margin:0;font-size:36px;font-weight:900}
+header p{font-size:18px;font-style:italic;color:#ffeb3b}
+
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.tabs button{padding:10px 18px;margin:5px;border:none;cursor:pointer;border-radius:8px;font-weight:bold;font-size:14px}
+.tabs button.active{background:#1e88e5;color:#fff}
+
+section{padding:30px 15px;max-width:1000px;margin:auto;display:none;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+section.active{display:block}
+
+.box{padding:20px}
+#about{background:#bbdefb}
+#facilities{background:#c8e6c9}
+#gallery{background:#eceff1}
+#contact{background:linear-gradient(135deg,#0d47a1,#1e88e5);color:#fff}
+#why{background:#fff9c4}
+
+.notice-board{background:#fff3e0;padding:20px;border-left:6px solid #ff9800;border-radius:12px;margin:20px 0}
+.review-card{background:#e3f2fd;padding:15px;border-radius:12px;margin:10px 0}
+.review-card .stars{color:#ffca28;font-size:18px}
+
+.btn-green{display:inline-block;padding:18px 30px;background:#25D366;color:#fff;font-size:20px;border-radius:50px;text-decoration:none;margin-top:15px}
+
+.floating-left,.floating-right{position:fixed;bottom:15px;padding:18px 30px;font-size:22px;border-radius:50px;text-decoration:none;z-index:999}
+.floating-left{left:15px;background:#ffca28;color:#0d47a1}
+.floating-right{right:15px;background:#25D366;color:#fff}
+
+footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14px}
+
+/* Gallery responsive grid */
+.gallery-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:15px;text-align:center;font-style:italic;color:#555}
+
+/* Quick Admission modal responsive */
+#admissionModal div{width:90%;max-width:400px;margin:60px auto;padding:20px}
+#admissionModal input,#admissionModal select,#admissionModal textarea,#admissionModal button{font-size:16px}
+
+@media(max-width:480px){
+  header h1{font-size:28px} 
+  header p{font-size:16px}
+  .tabs button{font-size:12px;padding:8px 12px}
+  .btn-green{font-size:18px;padding:15px 25px}
+  .floating-left,.floating-right{font-size:20px;padding:15px 25px}
+}
+</style>
+</head>
+<body class="light">
+<header>
+  <div style="position:absolute;top:10px;left:15px;font-size:16px;font-weight:bold;">🙏 Welcome to our library| Namaste</div>
+  <div style="position:absolute;top:10px;right:15px;cursor:pointer;font-size:16px;" onclick="toggleDark()">🌙 Dark</div>
+  <h1>APNA <span>📚</span> LIBRARY</h1>
+  <p>A Peaceful Place for Study & Success</p>
+</header>
+
+<div class="tabs">
+<button class="tab-link active" onclick="openSection('about',this)">About</button>
+<button class="tab-link" onclick="openSection('facilities',this)">Facilities</button>
+<button class="tab-link" onclick="openSection('gallery',this)">Gallery</button>
+<button class="tab-link" onclick="openSection('contact',this)">Contact</button>
+<button class="tab-link" onclick="openSection('why',this)">Why Choose Us</button>
+</div>
+
+<section id="about" class="active">
+  <div class="box">
+    <h2>About APNA LIBRARY</h2>
+    <p>APNA LIBRARY is a dedicated self-study space designed for students preparing for competitive exams, board exams and professional courses. With silent study halls, discussion point and disciplined environment, we help students stay focused and consistent.</p>
+
+    <div class="notice-board">
+      <h3>📢 Notice Board</h3>
+      <ul>
+        <li>New admissions open</li>
+        <li>Limited seats available</li>
+        <li>Discussion point available</li>
+      </ul>
+    </div>
+
+    <a class="btn-green" href="javascript:void(0)" onclick="document.getElementById('admissionModal').style.display='block'">Quick Admission</a>
+  </div>
+</section>
+
+<section id="facilities">
+  <div class="box">
+    <h2>Facilities</h2>
+    <ul>
+      <li>Silent Study Environment</li>
+      <li>Discussion Point (within facilities)</li>
+      <li>Individual Study Tables</li>
+      <li>High-Speed Wi-Fi</li>
+      <li>Charging Points at every seat</li>
+      <li>CCTV Security</li>
+      <li>RO Drinking Water</li>
+      <li>Clean Washrooms</li>
+      <li>Proper Lighting & Ventilation</li>
+      <li>Air Conditioned</li>
+      <li>Daily Newspaper</li>
+      <li>Free Parking</li>
+      <li>Reference Books (as per availability)</li>
+      <li>Locker Facility</li>
+      <li>Power Backup</li>
+      <li>24 Hours Open</li>
+    </ul>
+
+    <h2 style="margin-top:20px;">Membership Plans</h2>
+    <table style="width:100%;border-collapse:collapse;background:#ffffffaa;border-radius:12px;overflow:hidden;">
+      <tr style="background:#1e88e5;color:white;">
+        <th style="padding:10px;">Plan</th>
+        <th style="padding:10px;">Duration</th>
+        <th style="padding:10px;">Fees</th>
+      </tr>
+      <tr><td style="padding:10px;text-align:center;">Daily</td><td style="padding:10px;text-align:center;">1 Day</td><td style="padding:10px;text-align:center;">*</td></tr>
+      <tr style="background:#f5f7fa;"><td style="padding:10px;text-align:center;">Monthly</td><td style="padding:10px;text-align:center;">30 Days</td><td style="padding:10px;text-align:center;">*</td></tr>
+      <tr><td style="padding:10px;text-align:center;">Quarterly</td><td style="padding:10px;text-align:center;">90 Days</td><td style="padding:10px;text-align:center;">*</td></tr>
+    </table>
+    <p style="margin-top:5px;font-style:italic;color:#444;">* Fee has changed. For latest fee, please contact us.</p>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="box">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      Photos will be uploaded soon.
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="box">
+    <h2>Contact APNA LIBRARY</h2>
+    <p><b>📍 Address:</b> Near Shekhar Super Market, Magistrate Colony, Ashiana Digha, Patna</p>
+    <p><b>📞 Phone:</b> 9229270646</p>
+    <p><b>🕒 Timing:</b> 6:00 AM – 10:00 PM</p>
+    <iframe src="https://www.google.com/maps?q=Ashiana+Digha+Rd,+Patna&output=embed" width="100%" height="200" style="border:0;border-radius:8px"></iframe>
+  </div>
+</section>
+
+<section id="why">
+  <div class="box">
+    <h2>Why Choose APNA LIBRARY?</h2>
+    <ul>
+      <li>💰 Most affordable library in </li>
+      <li>📚 Peaceful study environment</li>
+      <li>✔ Dedicated discussion point</li>
+      <li>🌐 Modern facilities</li>
+      <li>🟢 Flexible plans</li>
+    </ul>
+
+    <h2 style="margin-top:20px">What Students Say</h2>
+    <div class="review-card"><div class="stars">★★★★★</div>From morning to night, it’s my go-to study zone. Silence, focus, success – all in one place!” – Ayush</div>
+    <div class="review-card"><div class="stars">★★★★★</div>Clean, well-lit, and disciplined. Perfect for long study hours.” – Raja</div>
+    <div class="review-card"><div class="stars">★★★★★</div>“APNA Library doesn’t just give you a place to study, it gives you motivation to excel!” – Saurabh</div>
+ <div class="review-card"><div class="stars">★★★★★</div>This is amazing library and behaviour of owner is very good – Kanhaiya</div>
+<div class="review-card"><div class="stars">★★★★</div>“The facilities are top-notch – Wi-Fi, charging points, and comfortable seats. I spend hours here and always feel productive.” – Ankita</div>
+ <div class="review-card"><div class="stars">★★★★★</div>“APNA Library has quiet halls and a great discussion corner. I could concentrate without distractions, which really helped me prepare for exams efficiently.”-Nikhil</div>
+  </div>
+</section>
+
+<!-- Quick Admission Modal -->
+<div id="admissionModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000">
+  <div>
+    <h2>Quick Admission <span style="float:right;cursor:pointer;color:red;font-size:20px;" onclick="closeAdmission()">✖</span></h2>
+    <form onsubmit="sendWhatsApp(event)">
+      <input type="text" id="name" placeholder="Full Name" required style="width:100%;padding:10px;margin:8px 0;">
+      <input type="tel" id="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required style="width:100%;padding:10px;margin:8px 0;">
+      <select id="plan" required style="width:100%;padding:10px;margin:8px 0;">
+        <option value="">Select Plan</option>
+        <option>Monthly</option>
+        <option>Quarterly</option>
+        <option>Yearly</option>
+      </select>
+      <textarea id="message" placeholder="Message (optional)" style="width:100%;padding:10px;margin:8px 0;"></textarea>
+      <button type="submit" style="width:100%;padding:12px;background:#25D366;color:#fff;font-size:16px;border:none;border-radius:6px;">Send on WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<a class="floating-left" href="tel:9229270646">Call</a>
+<a class="floating-right" href="https://wa.me/919229270646" target="_blank">WhatsApp</a>
+
+<footer>© 2025 APNA LIBRARY | All Rights Reserved</footer>
+
+<script>
+function openSection(id, btn){
+  var sections=document.querySelectorAll('section');sections.forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  var buttons=document.querySelectorAll('.tab-link');buttons.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function closeAdmission(){document.getElementById('admissionModal').style.display='none';}
+function sendWhatsApp(e){
+  e.preventDefault();
+  var name=document.getElementById('name').value;
+  var mobile=document.getElementById('mobile').value;
+  var plan=document.getElementById('plan').value;
+  var msg=document.getElementById('message').value;
+  var text=`Quick Admission%0AName: ${name}%0AMobile: ${mobile}%0APlan: ${plan}%0AMessage: ${msg}`;
+  window.open(`https://wa.me/919229270646?text=${text}`,'_blank');
+}
+function toggleDark(){document.body.classList.toggle('dark');}
+</script>
+</body>
+</html>

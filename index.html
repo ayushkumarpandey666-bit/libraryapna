@@ -1,194 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APNA LIBRARY 📚</title>
+<style>
+body.dark{background:#121212;color:#e0e0e0;}
+body.dark header{background:#000;}
+body.dark section{background:#1e1e1e;color:#fff;}
+body.dark footer{background:#000;color:#fff;}
 
-<section id="about">
-  <div class="about-box">
+body{margin:0;font-family:'Georgia',serif;background:linear-gradient(to right,#f5f7fa,#e3f2fd);color:#333}
+header{background:linear-gradient(135deg,#1e88e5,#42a5f5);color:#fff;padding:60px 20px;text-align:center;position:relative}
+header h1{margin:0;font-size:36px;font-weight:900;color:#ffeb3b}
+header p{font-size:18px;font-style:italic;color:#fff}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.tabs button{padding:10px 18px;margin:5px;border:none;cursor:pointer;border-radius:8px;font-weight:bold;font-size:14px}
+.tabs button.active{background:#1e88e5;color:#fff}
+section{padding:30px 15px;max-width:1000px;margin:auto;display:none;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+section.active{display:block}
+.box{padding:20px}
+#about{background:#bbdefb}
+#facilities{background:#c8e6c9}
+#gallery{background:#eceff1}
+#contact{background:linear-gradient(135deg,#0d47a1,#1e88e5);color:#fff}
+#why{background:#fff9c4}
+.notice-board{background:#fff3e0;padding:20px;border-left:6px solid #ff9800;border-radius:12px;margin:20px 0}
+.review-card{background:#e3f2fd;padding:15px;border-radius:12px;margin:10px 0;font-weight:bold}
+.review-card .stars{color:#ffca28;font-size:18px}
+.btn-green{display:inline-block;padding:18px 30px;background:#25D366;color:#fff;font-size:20px;border-radius:50px;text-decoration:none;margin-top:15px}
+.floating-left,.floating-right{position:fixed;bottom:15px;padding:18px 30px;font-size:22px;border-radius:50px;text-decoration:none;z-index:999}
+.floating-left{left:15px;background:#ffca28;color:#0d47a1}
+.floating-right{right:15px;background:#25D366;color:#fff}
+footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14px}
 
-    <h2 class="about-title">About <span>APNA LIBRARY 📚</span></h2>
+/* Facilities Grid */
+.facilities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:15px}
+.facilities-grid div{background:#ffffffaa;padding:15px;border-radius:12px;text-align:center;font-weight:bold}
 
-    <p class="about-para">
-      APNA LIBRARY is not just a reading space — it is a <b>second home for serious students</b>.
-      We understand how important focus, discipline, and consistency are for success, and that’s
-      exactly what we provide every single day.
-    </p>
+/* Gallery responsive grid */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:15px}
+.gallery-grid img{width:100%;border-radius:8px}
 
-    <p class="about-para highlight">
-      Our library is specially designed for students preparing for competitive exams, board exams,
-      and long study hours — where silence, comfort, and positive study vibes matter the most.
-    </p>
+/* Quick Admission modal responsive */
+#admissionModal div{width:90%;max-width:450px;margin:60px auto;padding:25px;background:#fff;border-radius:12px}
+#admissionModal input,#admissionModal select,#admissionModal textarea,#admissionModal button{font-size:16px}
+@media(max-width:480px){
+  header h1{font-size:28px} 
+  header p{font-size:16px}
+  .tabs button{font-size:12px;padding:8px 12px}
+  .btn-green{font-size:18px;padding:15px 25px}
+  .floating-left,.floating-right{font-size:20px;padding:15px 25px}
+}
+</style>
+</head>
+<body class="light">
+<header>
+  <div style="position:absolute;top:10px;left:15px;font-size:16px;font-weight:bold;">🙏 Welcome | Namaste</div>
+  <div style="position:absolute;top:10px;right:15px;cursor:pointer;font-size:16px;" onclick="toggleDark()">🌙 Dark</div>
+  <h1>APNA <span>📚</span> LIBRARY</h1>
+  <p>A Peaceful Place for Study & Success</p>
+</header>
 
-    <p class="about-para">
-      At APNA LIBRARY, students enjoy a peaceful study environment, comfortable seating,
-      proper lighting, and a dedicated <b>discussion point</b> — so learning never feels stressful or lonely.
-    </p>
-
-    <p class="about-para highlight">
-      We believe quality study space should be affordable and accessible.
-      That’s why APNA LIBRARY is trusted for being budget-friendly, disciplined, and truly “apna”.
-    </p>
-
-    <!-- Rules -->
-    <div class="rules-box">
-      <h3>📜 Library Rules</h3>
-      <ul>
-        <li>Maintain complete silence inside the library</li>
-        <li>Mobile phones must be on silent mode</li>
-        <li>Keep your study area clean and organised</li>
-        <li>Use discussion point respectfully</li>
-        <li>Follow library timings and discipline</li>
-      </ul>
-    </div>
+<div class="tabs">
+<button class="tab-link active" onclick="openSection('about',this)">About</button>
+<button class="tab-link" onclick="openSection('facilities',this)">Facilities</button>
+<button class="tab-link" onclick="openSection('gallery',this)">Gallery</button>
+<button class="tab-link" onclick="openSection('membership',this)">Membership and payment</button>
+<button class="tab-link" onclick="openSection('contact',this)">Contact</button>
+<button class="tab-link" onclick="openSection('why',this)">Why Choose Us</button>
 </div>
-</section>
 
-<section id="about">
-  <div class="about-box">
+<!-- About Section -->
+<section id="about" class="active"><div class="box">
+<h2>About APNA LIBRARY</h2>
+<p style="color:black;">APNA LIBRARY is a dedicated self-study space for students preparing for competitive and board exams.</p>
+<div style="
+  background: #e3f2fd;
+  border-left: 6px solid #1e88e5;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+">
 
-    <h2 class="about-title">About <span>APNA LIBRARY 📚</span></h2>
+  <p style="
+    font-size: 17px;
+    line-height: 1.7;
+    font-style: italic;
+    color: #0d47a1;
+    margin: 0;
+  ">
+    “With years of experience in supporting students, APNA LIBRARY has grown
+    with trust and dedication. Our aim is to continuously provide quality
+    facilities at affordable fees and help students move closer to their dreams.”
+  </p>
 
-    <p class="about-para">
-      APNA LIBRARY is not just a reading space — it is a <b>second home for serious students</b>.
-      We understand how important focus, discipline, and consistency are for success, and that’s
-      exactly what we provide every single day.
-    </p>
+  <p style="
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #1e88e5;
+    text-align: right;
+  ">
+    — Reema Singh (Owner)
+  </p>
 
-    <p class="about-para highlight">
-      Our library is specially designed for students preparing for competitive exams, board exams,
-      and long study hours — where silence, comfort, and positive study vibes matter the most.
-    </p>
+</div>
+  <p class="quote-text">
+    “With years of experience in supporting students, APNA LIBRARY has grown
+    with trust and dedication. Our aim is to continuously provide quality
+    facilities at affordable fees and help students move closer to their dreams.”
+  </p>
+  <p class="quote-author">— Reema Singh <span>(Owner)</span></p>
+</div>
+<div class="notice-board"><h3>📢 Notice Board</h3>
+<ul>
+<li>New admissions open</li>
+<li>Limited seats available</li>
+<li>Join fast to get maximum discount</li>
+</ul></div>
+<div style="margin-top:15px;font-weight:bold;">
+📌 Library Rules: Maintain Silence | Keep Clean | Follow Discipline | Respect Others
+</div>
+<a class="btn-green" href="javascript:void(0)" onclick="document.getElementById('admissionModal').style.display='block'">Quick Admission</a>
+</div></section>
 
-    <p class="about-para">
-      At APNA LIBRARY, students enjoy a peaceful study environment, comfortable seating,
-      proper lighting, and a dedicated <b>discussion point</b> — so learning never feels stressful or lonely.
-    </p>
+<!-- Facilities Section -->
+<section id="facilities">
+<div class="box">
+<h2>Facilities</h2>
+<div class="facilities-grid">
+<div>📖 Silent Study</div>
+<div>🗣 Discussion Point</div>
+<div>💻 High-Speed Wi-Fi</div>
+<div>🔌 Charging Points</div>
+<div>🛡 CCTV Security</div>
+<div>🚰 RO Water</div>
+<div>🧹 Clean Washrooms</div>
+<div>💡 Proper Lighting</div>
+<div>❄ Air Conditioned</div>
+<div>📰 Daily Newspaper</div>
+<div>🅿 Free Parking</div>
+<div>📚 Reference Books</div>
+<div>🔒 Locker Facility</div>
+<div>⚡ Power Backup</div>
+<div>⏰ 24 Hours Open</div>
+</div>
+</div></section>
 
-    <p class="about-para highlight">
-      We believe quality study space should be affordable and accessible.
-      That’s why APNA LIBRARY is trusted for being budget-friendly, disciplined, and truly “apna”.
-    </p>
+<!-- Gallery Section -->
+<section id="gallery"><div class="box">
+<h2>Gallery</h2>
 
-    <!-- Rules -->
-    <div class="rules-box">
-      <h3>📜 Library Rules</h3>
-      <ul>
-        <li>Maintain complete silence inside the library</li>
-        <li>Mobile phones must be on silent mode</li>
-        <li>Keep your study area clean and organised</li>
-        <li>Use discussion point respectfully</li>
-        <li>Follow library timings and discipline</li>
-      </ul>
-    </div>
+<div class="img-box">
 
-    <!-- Librarian Quote -->
-    <div class="quote-box">
-      <p>
-        “With years of experience in supporting students, APNA LIBRARY has grown with trust and dedication.
-        Our aim is to continuously provide quality facilities at an affordable fee and help students
-        move closer to their dreams.”
-      </p>
-      <span>— Reema Singh (Owner)</span>
-    </div>
+<img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwdJs0Uzvebt3qILHsTu5b-I8gwQK8IMZrK4tYhvgdJbOvOnVTPBpzZX6EOfItdSl0UoaxCQqOpGtYpds0JTsxB92PwRb7n_nDfuvQTCxRNv4cAqFgMoujFTD1S7IHcxi7mZgdn0LZRxJrL=s680-w680-h510-rw" alt="Library Gate">
 
-  </div>
-</section>
+<img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyzNz0D5rhk6VAl7sW_Lc9J6P8LGHllnqwROrNsEsXx3Kks62fpjLEAcsq8QI_VaiLETL36fpHZwYfpcenHw3N6gSfU2RX2NWwflYdsKZbVDE_nNeqgb3lDfQ0ymCljj8rG9lFca8suGvc=s680-w680-h510-rw" alt="library hall"></div>
 
+<p></p>
+<p style="color:#555;font-style:italic;">More photos will be uploaded soon.</p>
+</div></section>
 
-APNA LIBRARY is not just a reading space — it is a second home for serious students.
-We understand how important focus, discipline, and consistency are for success, and that’s exactly what we provide every single day.
+<!-- Membership Section -->
+<section id="membership"><div class="box">
+<h2>Membership Plans</h2>
+<table style="width:100%;border-collapse:collapse;background:#ffffffaa;border-radius:12px;overflow:hidden;">
+<tr style="background:#1e88e5;color:white;">
+<th style="padding:10px;">Plan</th>
+<th style="padding:10px;">Fees</th>
+</tr>
+<tr><td style="padding:10px;text-align:center;">1 Day</td><td style="padding:10px;text-align:center;">*</td></tr>
+<tr style="background:#f5f7fa;"><td style="padding:10px;text-align:center;">1 Month</td><td style="padding:10px;text-align:center;">*</td></tr>
+<tr><td style="padding:10px;text-align:center;">3 Months</td><td style="padding:10px;text-align:center;">*</td></tr>
+<tr style="background:#f5f7fa;"><td style="padding:10px;text-align:center;">6 Months</td><td style="padding:10px;text-align:center;">*</td></tr>
+</table>
+<p style="margin-top:5px;font-style:italic;color:#444;">* Fee has changed. For latest fee, please contact us.</p>
+</div>
+<div style="
+  margin-top:30px;
+  background:#fffde7;
+  padding:22px;
+  border-radius:12px;
+  border:2px dashed #fbc02d;
+">
 
-Our library is specially designed for students preparing for competitive exams, board exams, and long study hours, where silence, comfort, and positive study vibes matter the most.
+  <h3 style="margin-top:0;color:#f57f17;">
+    💰 Payment / Fee Section
+  </h3>
 
-At APNA LIBRARY, students enjoy a peaceful study environment, well-maintained seating, proper lighting, and a dedicated discussion point — so learning never feels stressful or lonely.
+  <p style="font-size:14px;color:#333;">
+    * Fee has changed. For latest fee details, please contact us before payment.
+  </p>
 
-We believe quality study space should be affordable and accessible, not expensive.
-That’s why APNA LIBRARY is trusted by students for being budget-friendly, disciplined, and truly “apna”.
-
-
-<!-- Payment / Fee Section Start -->
-<div style="margin-top:20px;padding:15px;border:2px dashed #42a5f5;border-radius:12px;background:#e3f2fd;">
-  <h3 style="margin-bottom:10px;color:#1e88e5;">💰 Payment / Fee</h3>
-  <label for="planSelect" style="font-weight:bold;">Select Plan:</label>
-  <select id="planSelect" style="padding:8px 10px;margin-left:10px;border-radius:6px;border:1px solid #999;">
-    <option value="Daily">1 Day</option>
-    <option value="Monthly">1 Month</option>
-    <option value="Quarterly">3 Months</option>
-    <option value="HalfYearly">6 Months</option>
+  <label style="font-weight:bold;">Select Plan:</label><br>
+  <select id="feePlan" style="
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+  ">
+    <option value="">-- Select Plan --</option>
+    <option value="Daily Plan">Daily Plan</option>
+    <option value="Monthly Plan">Monthly Plan</option>
+    <option value="Quarterly Plan">Quarterly Plan</option>
+    <option value="6 Months Plan">6 Months Plan</option>
   </select>
-  <br><br>
-  <button 
-    style="padding:12px 25px;background:#25D366;color:#fff;font-weight:bold;border:none;border-radius:8px;cursor:pointer;font-size:16px;transition:0.3s;"
-    onmouseover="this.style.background='#128C7E';this.style.transform='scale(1.05)';"
-    onmouseout="this.style.background='#25D366';this.style.transform='scale(1)';"
-    onclick="var plan=document.getElementById('planSelect').value;window.open('upi://pay?pa=q862649628@ybl&pn=APNA Library&tn=Payment for '+plan+'&am=0','_blank');">
+
+  <p style="font-size:14px;">
+    <b>UPI ID:</b> 9341749946@ibl
+  </p>
+
+  <button onclick="payNowWithPlan()" style="
+    margin-top:12px;
+    padding:12px 24px;
+    font-size:16px;
+    background:#1e88e5;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+  ">
     Pay Now
   </button>
-  <p style="margin-top:10px;font-style:italic;color:#555;">* Fee has changed. For latest fee, please contact us.</p>
+
 </div>
-<!-- Payment / Fee Section End -->
 
-<head>
-  <style>
-    /* Pehle se existing CSS */
+<script>
+function payNowWithPlan(){
+  var plan = document.getElementById("feePlan").value;
 
-    /* Tabs buttons enhanced */
-    .tabs button {
-      padding:12px 20px;
-      margin:5px;
-      border:none;
-      cursor:pointer;
-      border-radius:12px;
-      font-weight:bold;
-      font-size:15px;
-      background:linear-gradient(135deg,#1e88e5,#42a5f5);
-      color:#fff;
-      box-shadow:0 4px 12px rgba(0,0,0,0.2);
-      position:relative;
-      overflow:hidden;
-      transition:0.3s;
-    }
+  if(plan === ""){
+    alert("Please select a plan first");
+    return;
+  }
 
-    .tabs button.active {
-      background:linear-gradient(135deg,#ff9800,#ffc107);
-      color:#fff;
-      box-shadow:0 6px 15px rgba(0,0,0,0.3);
-      transform:scale(1.05);
-    }
+  var upi = "9341749946@ibl";
+  var note = encodeURIComponent("Library Fee - " + plan);
 
-    .tabs button:hover {
-      transform:scale(1.05);
-      box-shadow:0 6px 15px rgba(0,0,0,0.3);
-    }
+  var upiLink =
+    "upi://pay?pa=" + upi +
+    "&pn=APNA%20LIBRARY" +
+    "&tn=" + note +
+    "&cu=INR";
 
-    .tabs button::after {
-      content:'';
-      position:absolute;
-      top:0;
-      left:-75%;
-      width:50%;
-      height:100%;
-      background:rgba(255,255,255,0.3);
-      transform:skewX(-20deg);
-      transition:0.5s;
-    }
+  if(/Android|iPhone|iPad/i.test(navigator.userAgent)){
+    window.location.href = upiLink;
+  } else {
+    navigator.clipboard.writeText(upi);
+    alert(
+      "UPI payment works on mobile only.\n\n" +
+      "Selected Plan: " + plan + "\n" +
+      "UPI ID copied: " + upi
+    );
+  }
+}
+</script>
+</section>
 
-    .tabs button:hover::after {
-      left:125%;
-    }
+<!-- Contact Section -->
+<section id="contact"><div class="box">
+<h2>Contact APNA LIBRARY</h2>
+<p><b>📍 Address:</b> Near Shekhar Super Market, Magistrate Colony, Ashiana Digha, Patna</p>
+<p><b>📞 Phone:</b> 9229270646</p>
+<p><b>🕒 Timing:</b> 6:00 AM – 10:00 PM</p>
+<iframe src="https://www.google.com/maps?q=Ashiana+Digha+Rd,+Patna&output=embed" width="100%" height="200" style="border:0;border-radius:8px"></iframe>
+</div></section>
 
-    /* Baaki ke existing CSS yaha rahega */
-  </style>
-</head>
 <!-- Why Choose Us Section -->
 <section id="why"><div class="box">
 <h2>Why Choose Us</h2>
 <ul>
 <li>💰 Most affordable library in area</li>
 <li>📚 Peaceful study environment</li>
-<li>✔️ Dedicated discussion point</li>
+<li>✔ Dedicated discussion point</li>
 <li>🌐 Modern facilities</li>
 <li>🟢 Flexible plans</li>
 </ul>
  <h2 style="margin-top:20px">What Students Say</h2>
     <div class="review-card"><div class="stars">★★★★★</div>From morning to night, it’s my go-to study zone. Silence, focus, success – all in one place!”❤️ – Ayush</div>
-    <div class="review-card"><div class="stars">★★★★★</div>Clean, well-lit, and disciplined. Perfect for long study hours👍” – Raja</div>
+    <div class="review-card"><div class="stars">★★★★★</div>Clean, well-lit, and disciplined. Perfect for long study hours👍).” – Raja</div>
     <div class="review-card"><div class="stars">★★★★★</div>“APNA Library doesn’t just give you a place to study, it gives you motivation to excel!” – Saurabh</div>
  <div class="review-card"><div class="stars">★★★★★</div>This is amazing library and behaviour of owner is very good – Kanhaiya</div>
 <div class="review-card"><div class="stars">★★★★</div>“The facilities are top-notch – Wi-Fi, charging points, and comfortable seats. I spend hours here and always feel productive 🥰🥰🥰.” – Ankita</div>
@@ -205,7 +298,7 @@ And all facilities like AC, RO water etc are available. And good behavioural sup
 <!-- Quick Admission Modal -->
 <div id="admissionModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:2000">
 <div>
-<h2>Quick Admission <span style="float:right;cursor:pointer;color:red;font-size:20px;" onclick="closeAdmission()">✖️</span></h2>
+<h2>Quick Admission <span style="float:right;cursor:pointer;color:red;font-size:20px;" onclick="closeAdmission()">✖</span></h2>
 <form onsubmit="sendWhatsApp(event)">
 <input type="text" id="name" placeholder="Full Name" required style="width:100%;padding:10px;margin:8px 0;">
 <input type="tel" id="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required style="width:100%;padding:10px;margin:8px 0;">
@@ -242,7 +335,7 @@ var name=document.getElementById('name').value;
 var mobile=document.getElementById('mobile').value;
 var plan=document.getElementById('plan').value;
 var msg=document.getElementById('message').value;
-var text=Quick Admission%0AName: ${name}%0AMobile: ${mobile}%0APlan: ${plan}%0AMessage: ${msg};
+var text=`Quick Admission%0AName: ${name}%0AMobile: ${mobile}%0APlan: ${plan}%0AMessage: ${msg}`;
 window.open(`https://wa.me/919229270646?text=${text}`,'_blank');
 }
 function toggleDark(){document.body.classList.toggle('dark');}

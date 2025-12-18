@@ -56,14 +56,24 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
 </head>
 <body class="light">
 <header>
-  <div style="position:absolute;top:10px;left:15px;font-size:16px;font-weight:bold;">🙏 Welcome | Namaste</div>
-  <div style="position:absolute;top:10px;right:15px;cursor:pointer;font-size:16px;" onclick="toggleDark()">🌙 Dark</div>
+  <div style="position:absolute;top:10px;left:15px;font-size:12px;font-weight:bold;">🙏 Welcome | Namaste</div>
+  <div style="position:absolute;top:10px;right:15px;cursor:pointer;font-size:18px;" onclick="toggleDark()">🌙 Dark</div>
   <h1>APNA <span>📚</span> LIBRARY</h1>
   <p>A Peaceful Place for Study & Success</p>
 </header>
 
 <div class="tabs">
-<button class="tab-link active" onclick="openSection('about',this)">📘About</button>
+<button class="tab-link active" style="
+padding:12px 18px;
+border-radius:12px;
+border:none;
+background:#1e88e5;
+color:white;
+font-size:16px;
+font-weight:600;
+box-shadow:0 4px 8px rgba(0,0,0,0.2);
+cursor:pointer;
+"> onclick="openSection('about',this)">📘About</button>
 <button class="tab-link" onclick="openSection('facilities',this)">🏢Facilities</button>
 <button class="tab-link" onclick="openSection('gallery',this)">🖼️Gallery</button>
 <button class="tab-link" onclick="openSection('membership',this)">💳Membership and payment</button>
@@ -120,12 +130,12 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
 }
 </style>
 <h2>About APNA LIBRARY  📚</h2>
-<p style="color:#FFFFFF;">
+<p style="color:#212121;">
 
 <b><i>APNA LIBRARY is not just a reading space — it is a second home for serious students.
 We understand how important focus, discipline, and consistency are for success, and that’s exactly what we provide every single day.<i></p>
 
-<p>Our library is specially designed for students preparing for competitive exams, board exams, and long study hours, where silence, comfort, and positive study vibes matter the most.</p>
+<p style="color:#FFC107">Our library is specially designed for students preparing for competitive exams, board exams, and long study hours, where silence, comfort, and positive study vibes matter the most.</p>
 
 <p style="color:#0D47A1">At APNA LIBRARY, students enjoy a peaceful study environment, well-maintained seating, proper lighting, and a dedicated discussion point — so learning never feels stressful or lonely.</p>
 
@@ -336,7 +346,7 @@ function payNowWithPlan(){
 </ul>
  <h2 style="margin-top:20px">What Students Say</h2>
     <div class="review-card"><div class="stars">★★★★★</div>From morning to night, it’s my go-to study zone. Silence, focus, success – all in one place!❤️ – Ayush Kumar</div>
-    <div class="review-card"><div class="stars">★★★★★</div>Clean, well-lit, and disciplined. Perfect for long study hours👍). – Raja</div>
+    <div class="review-card"><div class="stars">★★★★★</div>Clean, well-lit, and disciplined. Perfect for long study hours👍. – Raja</div>
     <div class="review-card"><div class="stars">★★★★★</div>“APNA Library doesn’t just give you a place to study, it gives you motivation to excel!” – Saurabh Yadav</div>
  <div class="review-card"><div class="stars">★★★★★</div>This is amazing library and behaviour of owner is very good – Kanhaiya</div>
 <div class="review-card"><div class="stars">★★★★★</div>“The facilities are top-notch – Wi-Fi, charging points, and comfortable seats. I spend hours here and always feel productive 🥰🥰🥰 – Ankita</div>
@@ -400,6 +410,7 @@ function toggleDark(){document.body.classList.toggle('dark');}
 </script>
 </body>
 </html>
+
 
 
 

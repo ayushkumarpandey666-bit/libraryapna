@@ -57,7 +57,52 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
 <body class="light">
 <header>
   <div style="position:absolute;top:10px;left:15px;font-size:14px;font-weight:bold;">🙏 Welcome | Namaste</div>
-  <div style="position:absolute;top:10px;right:15px;cursor:pointer;font-size:18px;" onclick="toggleDark()">🌙 Dark</div>
+  <div class="dark-mode-toggle" onclick="toggleDark()">🌙 Dark Mode</div>
+
+<style>
+/* Dark mode button styling */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #1e88e5;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.dark-mode-toggle:hover {
+  background: #42a5f5;
+  transform: scale(1.05);
+}
+
+/* Dark mode styles */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+body.dark header {
+  background: #000;
+}
+body.dark section {
+  background: #1e1e1e;
+  color: #fff;
+}
+body.dark footer {
+  background: #000;
+  color: #fff;
+}
+</style>
+
+<script>
+function toggleDark() {
+  document.body.classList.toggle('dark');
+}
+</script>
   <h1>𝐀𝐏𝐍𝐀<span>📚</span>𝐋𝐈𝐁𝐑𝐀𝐘 </h1>
   <p><i>A Peaceful Place for Study & Success</i>i</p>
 </header>
@@ -377,7 +422,7 @@ And all facilities like AC, RO water etc are available. And good behavioural sup
 <a class="floating-left" href="tel:9229270646">📞 Call</a>
 <a class="floating-right" href="https://wa.me/919229270646" target="_blank">💬 WhatsApp</a>
 
-<footer>© 2025 APNA LIBRARY | All Rights Reserved</footer>
+<footer>© 2026 APNA LIBRARY | All Rights Reserved</footer>
 
 <script>
 function openSection(id, btn){
@@ -400,6 +445,7 @@ function toggleDark(){document.body.classList.toggle('dark');}
 </script>
 </body>
 </html>
+
 
 
 

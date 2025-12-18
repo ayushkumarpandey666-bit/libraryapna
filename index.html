@@ -29,7 +29,7 @@ section.active{display:block}
 .review-card{background:#e3f2fd;padding:15px;border-radius:12px;margin:10px 0;font-weight:bold}
 .review-card .stars{color:#ffca28;font-size:18px}
 .btn-green{display:inline-block;padding:18px 30px;background:#25D366;color:#fff;font-size:20px;border-radius:50px;text-decoration:none;margin-top:15px}
-.floating-left,.floating-right{position:fixed;bottom:15px;padding:18px 30px;font-size:22px;border-radius:50px;text-decoration:none;z-index:999}
+.floating-left,.floating-right{position:fixed;bottom:15px;padding:18px 30px;font-size:22px;border-radius:40px;text-decoration:none;z-index:999}
 .floating-left{left:15px;background:#ffca28;color:#0d47a1}
 .floating-right{right:15px;background:#25D366;color:#fff}
 footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14px}
@@ -46,7 +46,7 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
 #admissionModal div{width:90%;max-width:450px;margin:60px auto;padding:25px;background:#fff;border-radius:12px}
 #admissionModal input,#admissionModal select,#admissionModal textarea,#admissionModal button{font-size:16px}
 @media(max-width:480px){
-  header h1{font-size:28px} 
+  header h1{font-size:35px} 
   header p{font-size:16px}
   .tabs button{font-size:12px;padding:8px 12px}
   .btn-green{font-size:18px;padding:15px 25px}
@@ -56,24 +56,14 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
 </head>
 <body class="light">
 <header>
-  <div style="position:absolute;top:10px;left:15px;font-size:12px;font-weight:bold;">🙏 Welcome | Namaste</div>
+  <div style="position:absolute;top:10px;left:15px;font-size:14px;font-weight:bold;">🙏 Welcome | Namaste</div>
   <div style="position:absolute;top:10px;right:15px;cursor:pointer;font-size:18px;" onclick="toggleDark()">🌙 Dark</div>
-  <h1>APNA <span>📚</span> LIBRARY</h1>
-  <p>A Peaceful Place for Study & Success</p>
+  <h1>𝓐𝓟𝓝𝓐 <span>📚</span> 𝐿𝐼𝐵𝑅𝒜𝑅𝒴</h1>
+  <p><i>A Peaceful Place for Study & Success</i>i</p>
 </header>
 
 <div class="tabs">
-<button class="tab-link active" style="
-padding:12px 18px;
-border-radius:12px;
-border:none;
-background:#1e88e5;
-color:white;
-font-size:16px;
-font-weight:600;
-box-shadow:0 4px 8px rgba(0,0,0,0.2);
-cursor:pointer;
-"> onclick="openSection('about',this)">📘About</button>
+<button class="tab-link active"onclick="openSection('about',this)">📘About</button>
 <button class="tab-link" onclick="openSection('facilities',this)">🏢Facilities</button>
 <button class="tab-link" onclick="openSection('gallery',this)">🖼️Gallery</button>
 <button class="tab-link" onclick="openSection('membership',this)">💳Membership and payment</button>
@@ -219,7 +209,7 @@ That’s why APNA LIBRARY is trusted by students for being budget-friendly, disc
 <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwdJs0Uzvebt3qILHsTu5b-I8gwQK8IMZrK4tYhvgdJbOvOnVTPBpzZX6EOfItdSl0UoaxCQqOpGtYpds0JTsxB92PwRb7n_nDfuvQTCxRNv4cAqFgMoujFTD1S7IHcxi7mZgdn0LZRxJrL=s680-w680-h510-rw" alt="Library Gate" class="std-img"><p style="color:#0D47A1">Entry Gate<p></p></div>
 
 <div class="img-card">
-  <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyzNz0D5rhk6VAl7sW_Lc9J6P8LGHllnqwROrNsEsXx3Kks62fpjLEAcsq8QI_VaiLETL36fpHZwYfpcenHw3N6gSfU2RX2NWwflYdsKZbVDE_nNeqgb3lDfQ0ymCljj8rG9lFca8suGvc=s680-w680-h510-rw" alt="library hall" class="std-img"><p style="color:#0D47A1"> Libaray Hall</p>.</div>
+  <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyzNz0D5rhk6VAl7sW_Lc9J6P8LGHllnqwROrNsEsXx3Kks62fpjLEAcsq8QI_VaiLETL36fpHZwYfpcenHw3N6gSfU2RX2NWwflYdsKZbVDE_nNeqgb3lDfQ0ymCljj8rG9lFca8suGvc=s680-w680-h510-rw" alt="library hall" class="std-img"><p style="color:#4a148c"> Libaray Hall</p>.</div>
 <div class="img-card">
 <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwNWtaONS22fYGEx9T0tVpjFzuCpkmrg59JhBXoQDt_U4p71Bs-3x32wj12pDC_Y1OUIKBN9ysAU1dtY7FLX6FEAt6gnvViA77Kx5xI_TqBmDkegMmoKAdPwM2kmNZauT_Nz7YAZcS6hBc=s680-w680-h510-rw" class="std-img" alt=><p style="color:green">Library hall</p></div>
 
@@ -410,6 +400,7 @@ function toggleDark(){document.body.classList.toggle('dark');}
 </script>
 </body>
 </html>
+
 
 
 

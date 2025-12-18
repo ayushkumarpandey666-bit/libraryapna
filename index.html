@@ -68,7 +68,7 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
 <button class="tab-link" onclick="openSection('gallery',this)">🖼️Gallery</button>
 <button class="tab-link" onclick="openSection('membership',this)">💳Membership and payment</button>
 <button class="tab-link" onclick="openSection('contact',this)"> 📞Contact</button>
-<button class="tab-link" onclick="openSection('why',this)">Why Choose Us</button>
+<button class="tab-link" onclick="openSection('why',this)">💎Why Choose Us</button>
 </div>
 
 <!-- About Section -->
@@ -78,6 +78,47 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
    onclick="document.getElementById('admissionModal').style.display='block'">
    🚀 Quick Admission
 </a>
+  <style>
+/* Tabs styling */
+.tabs button {
+  padding: 12px 25px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  background: #1e88e5;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Active tab */
+.tabs button.active {
+  background: linear-gradient(135deg,#ff9800,#ffc107);
+  color: #fff;
+}
+
+/* Shine effect */
+.tabs button::after, .btn-green::after {
+  content:"";
+  position: absolute;
+  top:0; left:-75%;
+  width:50%;
+  height:100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: all 0.5s;
+}
+.tabs button:hover::after, .btn-green:hover::after {
+  left:125%;
+}
+/* Hover brightness */
+.btn-green:hover {
+  filter: brightness(1.1);
+}
+</style>
 <h2>About APNA LIBRARY  📚</h2>
 <p style="color:#FFFFFF;">
 
@@ -359,6 +400,7 @@ function toggleDark(){document.body.classList.toggle('dark');}
 </script>
 </body>
 </html>
+
 
 
 

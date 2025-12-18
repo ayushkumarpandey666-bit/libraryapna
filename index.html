@@ -56,8 +56,24 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
 </head>
 <body class="light">
 <header>
-  <div style="position:absolute;top:10px;left:15px;font-size:14px;font-weight:bold;">🙏 Welcome | Namaste</div>
-  <div style="position:absolute;top:10px;right:15px;cursor:pointer;font-size:15px;" onclick="toggleDark()">🌙 Dark</div>
+  <div style="position:absolute;top:10px;left:15px;font-size:14px;font-weight:bold;"><i>🙏 Welcome | Namaste</i></div>
+  <div style="
+    position:absolute;
+    top:10px;
+    right:15px;
+    padding:6px 12px;
+    background:#1e88e5;
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+  " 
+  onmouseover="this.style.background='#1565c0'" 
+  onmouseout="this.style.background='#1e88e5'" 
+  onclick="toggleDark()">🌙 Dark</div>
   <h1>𝐀𝐏𝐍𝐀<span>📚</span>𝐋𝐈𝐁𝐑𝐀𝐘 </h1>
   <p><i>A Peaceful Place for Study & Success</i>i</p>
 </header>
@@ -76,7 +92,7 @@ footer{background:#0d47a1;color:#fff;text-align:center;padding:15px;font-size:14
   <a class="btn-green admission-cta"
    href="javascript:void(0)"
    onclick="document.getElementById('admissionModal').style.display='block'">
-   🚀 Quick Admission
+   🚀 Click for Admission
 </a>
   <style>
 /* Tabs styling */
@@ -400,6 +416,7 @@ function toggleDark(){document.body.classList.toggle('dark');}
 </script>
 </body>
 </html>
+
 
 
 
